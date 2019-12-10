@@ -6,14 +6,21 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Pokedex</title>
         <link rel="stylesheet" href="main.css" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"/>
     </head>
     <body>
         <div class="container">
             <h1>Pokedex</h1>
+            <!-- <h1 style="color: #;"></h1> -->
+            <div class="buttons">
+                <button class="rgn-btn" onclick="kantoDex()">Kanto</button>
+                <button class="rgn-btn" onclick="jhotoDex()">Jhoto</button>
+                <button class="rgn-btn" onclick="hoennDex()">Hoenn</button>
+                <button class="rgn-btn" onclick="sinnohDex()">Sinnoh</button>
+                <button class="rgn-btn" onclick="unovaDex()">Unova</button>
+                <button class="rgn-btn" onclick="kalosDex()">Kalos</button>
+                <button class="rgn-btn" onclick="alolaDex()">Alola</button>
+            </div>
             <ul id="pokedex"></ul>
         </div>
         <script src="main.js"></script>
