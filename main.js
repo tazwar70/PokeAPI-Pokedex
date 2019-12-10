@@ -73,6 +73,6 @@ function kalosDex(){
 };
 function alolaDex(){
     firstPokemon = 722;
-    lastPokemon = 809;
+    lastPokemon = 807;
     fetchPokemon();
 };
