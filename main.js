@@ -76,3 +76,16 @@ function alolaDex(){
     lastPokemon = 807;
     fetchPokemon();
 };
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myButtons");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
