@@ -18,6 +18,7 @@ const fetchPokemon = () => {
             type: result.types.map((type) => type.type.name).join(', '),
             id: result.id
         }));
+        console.log(results);
         displayPokemon(pokemon);
     });
 };
@@ -27,7 +28,7 @@ const displayPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
         .map(
             (pokeman) => `
-        <li class="card">
+        <li class="card" onclick="fetchPKMNData()">
             <h2 class="card-title">#${pokeman.id}</h2>
             <h1 class="pokemon-name">${pokeman.name}</h1>
             <img class="card-image" src="${pokeman.image}"/>
@@ -88,4 +89,8 @@ function myFunction() {
   } else {
     header.classList.remove("sticky");
   }
+}
+
+function fetchPKMNData(){
+    alert("Not Implemented Yet.");
 }

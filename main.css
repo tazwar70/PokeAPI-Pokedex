@@ -57,14 +57,14 @@ h1 {
 
 .card-image {
     height: 250px;
-    transition: ease-in-out;
-    transition-duration: 1500;
+    /* transition: ease-in-out;
+    transition-duration: 1500; */
 }
 .card-image:hover{
     transform: scale(1.2);
 }
 
-@keyframes bounce {
+/* @keyframes bounce {
     20% {
         transform: translateY(-6px);
     }
@@ -78,7 +78,7 @@ h1 {
     100% {
         transform: translateY(0);
     }
-}
+} */
 .buttons{
     display: flex;
     width: 98%;
@@ -110,3 +110,47 @@ h1 {
     width: 98%;
     padding: 1%;
   }
+
+@media only screen and (max-width: 420px) {
+.card{
+    display: flex;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 1%;
+}
+#pokedex{
+    grid-gap: 10px;
+}
+.container{
+    padding: 1%;
+    margin: 0;
+}
+.card-title{
+    display: block;
+    font-size: auto;
+}
+.pokemon-name{
+    display: block;
+    font-size: auto;
+}
+.card-image{
+    display: none;
+}
+.card-subtitle{
+    display: none;
+}
+.buttons{
+    display: block;
+    width: auto;
+    height: auto;
+    font-size: auto;
+}
+.rgn-btn{
+    width: 100%;
+    font-size: auto;
+}
+.sticky{
+    position: initial;
+}
+}
