@@ -18,26 +18,28 @@ const fetchPokemon = () => {
             type: result.types.map((type) => type.type.name).join(', '),
             id: result.id
         }));
-        console.log(results);
+        //console.log(results);
         displayPokemon(pokemon);
+        console.log(pokemon);
     });
 };
 
 const displayPokemon = (pokemon) => {
-    console.log(pokemon);
+//    console.log(pokemon);
     const pokemonHTMLString = pokemon
         .map(
             (pokeman) => `
-        <li class="card" onclick="fetchPKMNData()">
-            <h2 class="card-title">#${pokeman.id}</h2>
+        <li class="pkmn-card" onclick="fetchPKMNData()">
+            <h2 class="pkmn-card-title">#${pokeman.id}</h2>
             <h1 class="pokemon-name">${pokeman.name}</h1>
-            <img class="card-image" src="${pokeman.image}"/>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
+            <img class="pkmn-card-image" src="${pokeman.image}"/>
+            <p class="pkmn-card-subtitle">Type: ${pokeman.type}</p>
         </li>
     `
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
+    return(pokemon.name);
 };
 
 fetchPokemon();
@@ -84,13 +86,14 @@ var header = document.getElementById("myButtons");
 var sticky = header.offsetTop;
 
 function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 }
 
-function fetchPKMNData(){
-    alert("Not Implemented Yet.");
+function fetchPKMNData(poke_name){
+    alert(poke_name);
+    consoles.log(poke_name);
 }

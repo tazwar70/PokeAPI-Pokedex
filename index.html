@@ -5,26 +5,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Pokedex</title>
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css" />
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"/>
     </head>
     <body>
-        <div class="container">
-            <h1>Pokedex</h1>
-        </div>
             <!-- <h1 style="color: #;"></h1> -->
-            <div class="buttons" id="myButtons">
-                <button class="rgn-btn" onclick="kantoDex()">Kanto</button>
-                <button class="rgn-btn" onclick="jhotoDex()">Jhoto</button>
-                <button class="rgn-btn" onclick="hoennDex()">Hoenn</button>
-                <button class="rgn-btn" onclick="sinnohDex()">Sinnoh</button>
-                <button class="rgn-btn" onclick="unovaDex()">Unova</button>
-                <button class="rgn-btn" onclick="kalosDex()">Kalos</button>
-                <button class="rgn-btn" onclick="alolaDex()">Alola</button>
-            </div>
-        <div class="container">
+
+            <nav class="navbar navbar-lg sticky-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#"><h1>Pokedex</h1></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse mr-auto navbar-collapse flex-row flex-wrap overflow-auto" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex flex-row flex-wrap overflow-auto">
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="kantoDex()">Kanto</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="jhotoDex()">Jhoto</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="hoennDex()">Hoenn</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="sinnohDex()">Sinnoh</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="unovaDex()">Unova</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="kalosDex()">Kalos</button>
+                    </li>
+                    <li class="nav-item p-2">
+                        <button type="button" class="btn btn-outline-danger" onclick="alolaDex()">Alola</button>
+                    </li>
+                </ul>
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </div>
+                <!--
+                <button type="button" class="btn btn-outline-danger" onclick="kantoDex()">Kanto</button>
+                <button type="button" class="btn btn-outline-danger" onclick="jhotoDex()">Jhoto</button>
+                <button type="button" class="btn btn-outline-danger" onclick="hoennDex()">Hoenn</button>
+                <button type="button" class="btn btn-outline-danger" onclick="sinnohDex()">Sinnoh</button>
+                <button type="button" class="btn btn-outline-danger" onclick="unovaDex()">Unova</button>
+                <button type="button" class="btn btn-outline-danger" onclick="kalosDex()">Kalos</button>
+                <button type="button" class="btn btn-outline-danger" onclick="alolaDex()">Alola</button> -->
+            </nav>
+            <!-- <div class="buttons" id="myButtons">
+                
+            </div> -->
+        <div class="poke_container">
             <ul id="pokedex"></ul>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
