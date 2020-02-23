@@ -1,21 +1,19 @@
-const pokedex = document.getElementById('pokedex');
+const pokedex = document.getElementById("pokedex");
 
 var firstPokemon = 1;
 var lastPokemon = 151;
-
-
 
 const fetchPokemon = () => {
     const promises = [];
     for (let i = firstPokemon; i <= lastPokemon; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
+        promises.push(fetch(url).then(res => res.json()));
     }
-    Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({
+    Promise.all(promises).then(results => {
+        const pokemon = results.map(result => ({
             name: result.name,
-            image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name).join(', '),
+            image: result.sprites["front_default"],
+            type: result.types.map(type => type.type.name).join(", "),
             id: result.id
         }));
         //console.log(results);
@@ -24,12 +22,12 @@ const fetchPokemon = () => {
     });
 };
 
-const displayPokemon = (pokemon) => {
-//    console.log(pokemon);
+const displayPokemon = pokemon => {
+    //    console.log(pokemon);
     const pokemonHTMLString = pokemon
         .map(
-            (pokeman) => `
-        <li class="pkmn-card" onclick="fetchPKMNData()">
+            pokeman => `
+        <li class="pkmn-card" onclick="showPKMNData('${pokeman.name}')">
             <h2 class="pkmn-card-title">#${pokeman.id}</h2>
             <h1 class="pokemon-name">${pokeman.name}</h1>
             <img class="pkmn-card-image" src="${pokeman.image}"/>
@@ -37,63 +35,86 @@ const displayPokemon = (pokemon) => {
         </li>
     `
         )
-        .join('');
+        .join("");
     pokedex.innerHTML = pokemonHTMLString;
-    return(pokemon.name);
+    return pokemon.name;
 };
 
 fetchPokemon();
 
-function kantoDex(){
+function kantoDex() {
     firstPokemon = 1;
     lastPokemon = 151;
     fetchPokemon();
-};
-function jhotoDex(){
+}
+
+function jhotoDex() {
     firstPokemon = 152;
     lastPokemon = 251;
     fetchPokemon();
-};
-function hoennDex(){
+}
+
+function hoennDex() {
     firstPokemon = 252;
     lastPokemon = 386;
     fetchPokemon();
-};
-function sinnohDex(){
+}
+
+function sinnohDex() {
     firstPokemon = 387;
     lastPokemon = 493;
     fetchPokemon();
-};
-function unovaDex(){
+}
+
+function unovaDex() {
     firstPokemon = 494;
     lastPokemon = 649;
     fetchPokemon();
-};
-function kalosDex(){
+}
+
+function kalosDex() {
     firstPokemon = 650;
     lastPokemon = 721;
     fetchPokemon();
-};
-function alolaDex(){
+}
+
+function alolaDex() {
     firstPokemon = 722;
     lastPokemon = 807;
     fetchPokemon();
-};
-
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myButtons");
-var sticky = header.offsetTop;
-
-function myFunction() {
-    if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
 }
 
-function fetchPKMNData(poke_name){
-    alert(poke_name);
-    consoles.log(poke_name);
+function getSpecificPokemonData(poke_name){
+    var poke_info_url = `https://pokeapi.co/api/v2/pokemon/${poke_name}`;
+    const poke_info = [];
+    poke_info.push(fetch(poke_info_url).then(res => res.json()));
+    
+    Promise.all(poke_info).then(results => {
+        const pokemon = results.map(result => ({
+            name: result.name,
+            image: result.sprites["front_default"],
+            type: result.types.map(type => type.type.name).join(", "),
+            id: result.id
+        }));
+        console.log(pokemon);
+        
+        var pokemon_info_view = pokemon.map(
+            pokemo_info => `
+        
+            <h2 class="pkmn-card-title">#${pokemo_info.id}</h2>
+            <h1 class="pokemon-name">${pokemo_info.name}</h1>
+            <img class="pkmn-card-image" src="${pokemo_info.image}"/>
+            <p class="pkmn-card-subtitle">Type: ${pokemo_info.type}</p>
+            ` )
+            document.getElementById('modal_pokemon_info').innerHTML = pokemon_info_view;
+    });
+}
+
+function showPKMNData(poke_name) {
+    // alert(poke_name);
+    $('#exampleModal').modal('show');
+
+    document.getElementById('exampleModalLabel').innerHTML = poke_name;
+    
+    getSpecificPokemonData(poke_name);
 }
