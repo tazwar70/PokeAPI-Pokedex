@@ -91,6 +91,7 @@ function getSpecificPokemonData(poke_name){
     
     Promise.all(poke_info).then(results => {
         const pokemon = results.map(result => ({
+            stats:result.stats.map(stat => stat.base_stat),
             name: result.name,
             image: result.sprites["front_default"],
             type: result.types.map(type => type.type.name).join(", "),
@@ -100,13 +101,40 @@ function getSpecificPokemonData(poke_name){
         
         var pokemon_info_view = pokemon.map(
             pokemo_info => `
-        
-            <h2 class="pkmn-card-title">#${pokemo_info.id}</h2>
-            <h1 class="pokemon-name">${pokemo_info.name}</h1>
-            <img class="pkmn-card-image" src="${pokemo_info.image}"/>
-            <p class="pkmn-card-subtitle">Type: ${pokemo_info.type}</p>
+            <div id="modal-pokemon-name-id-container">
+                <h2 class="modal-pkmn-card-title">#${pokemo_info.id}</h2>
+                <h1 class="modal-pokemon-name">${pokemo_info.name}</h1>
+            </div>
+            <p class="modal-pkmn-card-subtitle">Type: ${pokemo_info.type}</p>
+            <img class="modal-pkmn-card-image" src="${pokemo_info.image}"/>
+            
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ${pokemo_info.stats[0]}%" aria-valuenow="${pokemo_info.stats[0]}" aria-valuemin="0" aria-valuemax="255">Spd ${pokemo_info.stats[0]}</div>
+            </div>
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: ${pokemo_info.stats[1]}%" aria-valuenow="${pokemo_info.stats[1]}" aria-valuemin="0" aria-valuemax="255">Sp. Def ${pokemo_info.stats[1]}</div>
+            </div>
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: ${pokemo_info.stats[2]}%" aria-valuenow="${pokemo_info.stats[2]}" aria-valuemin="0" aria-valuemax="255">Sp. Atk. ${pokemo_info.stats[2]}</div>
+            </div>
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: ${pokemo_info.stats[3]}%" aria-valuenow="${pokemo_info.stats[3]}" aria-valuemin="0" aria-valuemax="255">Def. ${pokemo_info.stats[3]}</div>
+            </div>
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: ${pokemo_info.stats[4]}%" aria-valuenow="${pokemo_info.stats[4]}" aria-valuemin="0" aria-valuemax="255">Atk. ${pokemo_info.stats[4]}</div>
+            </div>
+            <div class="progress" style="background:var(--background);">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: ${pokemo_info.stats[5]}%" aria-valuenow="${pokemo_info.stats[5]}" aria-valuemin="0" aria-valuemax="255">HP ${pokemo_info.stats[5]}</div>
+            </div>
+
             ` )
+            
+
+
+
             document.getElementById('modal_pokemon_info').innerHTML = pokemon_info_view;
+            document.getElementById('exampleModalLabel').innerHTML = poke_name;
+
     });
 }
 
@@ -114,7 +142,6 @@ function showPKMNData(poke_name) {
     // alert(poke_name);
     $('#exampleModal').modal('show');
 
-    document.getElementById('exampleModalLabel').innerHTML = poke_name;
     
     getSpecificPokemonData(poke_name);
 }
