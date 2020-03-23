@@ -10,7 +10,7 @@
 }
 #boxLoading i{
   color: var(--red);
-  padding: 12rem;
+  padding-top: 12rem;
   font-size: 12rem;
 }
 
