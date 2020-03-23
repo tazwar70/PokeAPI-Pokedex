@@ -5,6 +5,8 @@ var lastPokemon = 151;
 
 const fetchPokemon = () => {
     const promises = [];
+    let loader = `<div id="boxLoading"><i class="fad fa-spinner fa-pulse"></i></div>`;
+    document.getElementById('pokedex').innerHTML = loader;
     for (let i = firstPokemon; i <= lastPokemon; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then(res => res.json()));

@@ -1,15 +1,26 @@
-:root{
+:root {
   --background-color: #333;
-  --white:#ecf0f1;
-  --navy-blue:#2c3e50;
-  --red:#e74c3c;
+  --white: #ecf0f1;
+  --navy-blue: #2c3e50;
+  --red: #e74c3c;
 }
+#boxLoading{
+  text-align: center;
+  color: var(--white);
+}
+#boxLoading i{
+  color: var(--red);
+  font-size: 5rem;
+}
+
 body {
   background-color: var(--background-color);
   color: var(--white);
   margin: 0;
   font-family: rubik;
+  
 }
+
 .poke_container {
   padding: 40px;
   margin: 0 auto;
@@ -32,22 +43,36 @@ h1 {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 20px;
   -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 .pkmn-card {
   list-style: none;
   padding: 40px;
-  background-color: var(--navy-blue);
+  border-radius: 37px;
+  background: #2c3e50;
+  box-shadow: inset 12px 12px 24px #1b2631,
+    inset -12px -12px 24px #3d566f;
   text-align: center;
 }
 
 .pkmn-card:hover {
-  -webkit-animation: bounce 0.5s linear;
-          animation: bounce 0.5s linear;
+  /* -webkit-animation: bounce 0.5s linear;
+          animation: bounce 0.5s linear; */
+  transition: 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition-duration: 1s;
+  transition-delay: 1s;
+  border-radius: 39px;
+  background: linear-gradient(145deg, #2f4256, #283848);
+  box-shadow:  10px 10px 20px #161e27, 
+             -10px -10px 20px #425e79;
+}
+.pkmn-card:hover .pkmn-card-image {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .pkmn-card-title {
@@ -69,10 +94,7 @@ h1 {
   height: 250px;
 }
 
-.pkmn-card-image:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
+
 
 /* @keyframes bounce {
     20% {
@@ -124,15 +146,19 @@ h1 {
   width: 98%;
   padding: 1%;
 }
+
 /* Modal Content Styling */
-.modal-header, .modal-body{
+.modal-header,
+.modal-body {
   background: var(--background-color);
 }
-.modal-body{
+
+.modal-body {
   text-align: center;
 }
-.modal-title{
-  text-transform:capitalize;
+
+.modal-title {
+  text-transform: capitalize;
 }
 
 .modal-pkmn-card-title {
@@ -156,8 +182,9 @@ h1 {
 
 .modal-pkmn-card-image:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
+
 .modal-pokemon-name {
   margin-left: 10px;
   text-transform: uppercase;
@@ -166,12 +193,13 @@ h1 {
   color: var(--white);
 }
 
-#modal-pokemon-name-id-container{
+#modal-pokemon-name-id-container {
   display: flex;
   align-content: center;
   justify-content: center;
 }
-.progress{
+
+.progress {
   margin-bottom: 10px;
   height: 25px;
 }
@@ -182,30 +210,42 @@ h1 {
 /* Nav */
 
 
-#navbar, #navbarNav{
+#navbar{
+  border-radius: 0px;
+background: #333333;
+box-shadow:  10px 10px 20px #191919, 
+             -10px -10px 20px #4d4d4d;
+}
+
+#navbarNav {
   background: var(--background-color);
   padding: 0;
   margin: 0;
 }
-#navbar a{
+
+#navbar a {
   padding-left: 1rem;
   color: var(--white);
   font-size: 3rem;
   text-align: right;
 }
-#navbarNav a{
+
+#navbarNav a {
   color: var(--white);
   font-size: 1.5rem;
 }
-#navbarNav ul{
+
+#navbarNav ul {
   padding: 0;
   margin: 0;
 }
-#navbarNav li:hover a{
+
+#navbarNav li:hover a {
   color: var(--red);
   font-weight: bold;
 }
-#navbarNav{
+
+#navbarNav {
   text-align: right;
 }
 
@@ -222,33 +262,51 @@ h1 {
     margin: 0;
     padding: 1%;
   }
+
   #pokedex {
     grid-gap: 10px;
   }
+
+  .pkmn-card {
+    list-style: none;
+    padding: 40px;
+    border-radius: 0px;
+background: #2c3e50;
+box-shadow: inset 14px 14px 28px #1e2b37, 
+            inset -14px -14px 28px #3a5169;
+    text-align: center;
+  }
+
   .poke_container {
     padding: 1%;
     margin: 0;
   }
+
   .pkmn-card-title {
     display: block;
     font-size: auto;
   }
+
   .pkmn-pokemon-name {
     display: block;
     font-size: auto;
   }
+
   .pkmn-card-image {
     display: none;
   }
+
   .pkmn-card-subtitle {
     display: none;
   }
+
   .buttons {
     display: block;
     width: auto;
     height: auto;
     font-size: auto;
   }
+
   .rgn-btn {
     width: 100%;
     font-size: auto;
