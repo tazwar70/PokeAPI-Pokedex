@@ -10,7 +10,8 @@
 }
 #boxLoading i{
   color: var(--red);
-  font-size: 5rem;
+  padding: 12rem;
+  font-size: 12rem;
 }
 
 body {
@@ -148,13 +149,27 @@ h1 {
 }
 
 /* Modal Content Styling */
-.modal-header,
-.modal-body {
+.modal-dialog{
+  border-radius: 43px;
+  border-radius: 66px;
+  border-radius: 66px;
+  background: linear-gradient(145deg, #2f4256, #283848);
+  box-shadow:  7px 7px 14px #121920, 
+               -7px -7px 14px #466380;
+}
+
+.modal-header {
   background: var(--background-color);
+  /* border-radius: 66px; */
+background: linear-gradient(145deg, #2f4256, #283848);
+box-shadow:  7px 7px 14px #121920, 
+             -7px -7px 14px #466380;
 }
 
 .modal-body {
   text-align: center;
+  background: linear-gradient(145deg, #2f4256, #283848);
+
 }
 
 .modal-title {
@@ -178,6 +193,12 @@ h1 {
 
 .modal-pkmn-card-image {
   height: 250px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 50%;
+background: #333333;
+box-shadow: inset 27px 27px 54px #141414, 
+            inset -27px -27px 54px #525252;
 }
 
 .modal-pkmn-card-image:hover {
