@@ -3,12 +3,36 @@
   --white: #ecf0f1;
   --navy-blue: #2c3e50;
   --red: #e74c3c;
+
+  --fire: #e74c3c;
+  --water: #3c94e7;
+  --grass: #099115;
+  --electric: #eff30c;
+  --normal: #b1b1a9;
+  --bug: #7aa164;
+  --ghost: #813d7c;
+  --poison: #ad2785;
+  --ground: #62633c;
+  --rock: #4e4533;
+  --fighting: #c95f09;
+  --psychic: #6d1d66;
+  --ice: #2e91aa;
+  --dragon: #3c4363;
+  --steel: #797575;
+  --fairy: #e21eb8;
+  --flying: #1894b3;
+  --dark: #0f0f0d;
+
+  --font_electric:#333;
+
 }
-#boxLoading{
+
+#boxLoading {
   text-align: center;
   color: var(--white);
 }
-#boxLoading i{
+
+#boxLoading i {
   color: var(--red);
   padding-top: 12rem;
   padding-bottom: 12rem;
@@ -20,7 +44,7 @@ body {
   color: var(--white);
   margin: 0;
   font-family: rubik;
-  
+
 }
 
 .poke_container {
@@ -69,9 +93,10 @@ h1 {
   transition-delay: 1s;
   border-radius: 39px;
   background: linear-gradient(145deg, #2f4256, #283848);
-  box-shadow:  10px 10px 20px #161e27, 
-             -10px -10px 20px #425e79;
+  box-shadow: 10px 10px 20px #161e27,
+    -10px -10px 20px #425e79;
 }
+
 .pkmn-card:hover .pkmn-card-image {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
@@ -90,6 +115,9 @@ h1 {
   color: var(--white);
   font-weight: lighter;
   text-transform: capitalize;
+}
+.pkmn-card-subtitle span{
+  color: var(--white);
 }
 
 .pkmn-card-image {
@@ -150,21 +178,21 @@ h1 {
 }
 
 /* Modal Content Styling */
-.modal-dialog{
+.modal-dialog {
   border-radius: 43px;
   border-radius: 66px;
   border-radius: 66px;
   background: linear-gradient(145deg, #2f4256, #283848);
-  box-shadow:  7px 7px 14px #121920, 
-               -7px -7px 14px #466380;
+  box-shadow: 7px 7px 14px #121920,
+    -7px -7px 14px #466380;
 }
 
 .modal-header {
   background: var(--background-color);
   /* border-radius: 66px; */
-background: linear-gradient(145deg, #2f4256, #283848);
-box-shadow:  7px 7px 14px #121920, 
-             -7px -7px 14px #466380;
+  background: linear-gradient(145deg, #2f4256, #283848);
+  box-shadow: 7px 7px 14px #121920,
+    -7px -7px 14px #466380;
 }
 
 .modal-body {
@@ -197,9 +225,9 @@ box-shadow:  7px 7px 14px #121920,
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 50%;
-background: #333333;
-box-shadow: inset 27px 27px 54px #141414, 
-            inset -27px -27px 54px #525252;
+  background: #333333;
+  box-shadow: inset 27px 27px 54px #141414,
+    inset -27px -27px 54px #525252;
 }
 
 .modal-pkmn-card-image:hover {
@@ -232,11 +260,11 @@ box-shadow: inset 27px 27px 54px #141414,
 /* Nav */
 
 
-#navbar{
+#navbar {
   border-radius: 0px;
-background: #333333;
-box-shadow:  10px 10px 20px #191919, 
-             -10px -10px 20px #4d4d4d;
+  background: #333333;
+  box-shadow: 10px 10px 20px #191919,
+    -10px -10px 20px #4d4d4d;
 }
 
 #navbarNav {
@@ -294,9 +322,9 @@ box-shadow:  10px 10px 20px #191919,
     display: flex;
     padding: 40px;
     border-radius: 0px;
-background: #2c3e50;
-box-shadow: inset 14px 14px 28px #1e2b37, 
-            inset -14px -14px 28px #3a5169;
+    background: #2c3e50;
+    box-shadow: inset 14px 14px 28px #1e2b37,
+      inset -14px -14px 28px #3a5169;
     text-align: center;
   }
 

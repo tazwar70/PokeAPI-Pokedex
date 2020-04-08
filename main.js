@@ -15,7 +15,7 @@ const fetchPokemon = () => {
         const pokemon = results.map(result => ({
             name: result.name,
             image: result.sprites["front_default"],
-            type: result.types.map(type => type.type.name).join(", "),
+            type: result.types.reverse().map(type => type.type.name).join(", "),
             id: result.id
         }));
         //console.log(results);
@@ -33,7 +33,7 @@ const displayPokemon = pokemon => {
             <h2 class="pkmn-card-title">#${pokeman.id}</h2>
             <h1 class="pokemon-name">${pokeman.name}</h1>
             <img class="pkmn-card-image" src="${pokeman.image}"/>
-            <p class="pkmn-card-subtitle">Type: ${pokeman.type}</p>
+            <p class="pkmn-card-subtitle">Type: <span style="border-radius:7px; padding:5px; background: var(--${pokeman.type}); color:var(--font_${pokeman.type});">${pokeman.type}</span></p>
         </li>
     `
         )
@@ -96,7 +96,7 @@ function getSpecificPokemonData(poke_name){
             stats:result.stats.map(stat => stat.base_stat),
             name: result.name,
             image: result.sprites["front_default"],
-            type: result.types.map(type => type.type.name).join(", "),
+            type: result.types.reverse().map(type => type.type.name).join(", "),
             id: result.id
         }));
         console.log(pokemon);
@@ -107,7 +107,7 @@ function getSpecificPokemonData(poke_name){
                 <h2 class="modal-pkmn-card-title">#${pokemo_info.id}</h2>
                 <h1 class="modal-pokemon-name">${pokemo_info.name}</h1>
             </div>
-            <p class="modal-pkmn-card-subtitle">Type: ${pokemo_info.type}</p>
+            <p class="modal-pkmn-card-subtitle">Type: <span style="border-radius:7px; padding:5px; background: var(--${pokemo_info.type}); color:var(--font_${pokemo_info.type});">${pokemo_info.type}</span></p>
             <img class="modal-pkmn-card-image" src="${pokemo_info.image}"/>
             
             <div class="progress" style="background:var(--background);">
