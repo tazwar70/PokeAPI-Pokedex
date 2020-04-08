@@ -291,6 +291,7 @@ box-shadow:  10px 10px 20px #191919,
 
   .pkmn-card {
     list-style: none;
+    display: flex;
     padding: 40px;
     border-radius: 0px;
 background: #2c3e50;
@@ -307,6 +308,7 @@ box-shadow: inset 14px 14px 28px #1e2b37,
   .pkmn-card-title {
     display: block;
     font-size: auto;
+    margin-right: 1rem;
   }
 
   .pkmn-pokemon-name {
