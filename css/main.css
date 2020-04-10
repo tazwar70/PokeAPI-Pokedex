@@ -326,6 +326,7 @@ h1 {
     box-shadow: inset 14px 14px 28px #1e2b37,
       inset -14px -14px 28px #3a5169;
     text-align: center;
+    font-size: 0.91rem;
   }
 
   .poke_container {
@@ -363,4 +364,54 @@ h1 {
     width: 100%;
     font-size: auto;
   }
+
+  /* Nav */
+
+
+#navbar {
+  border-radius: 0px;
+  background: #333333;
+  box-shadow: 10px 10px 20px #191919,
+    -10px -10px 20px #4d4d4d;
+    
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#navbarNav {
+  background: var(--background-color);
+  padding: 0;
+  margin: 0;
+}
+
+#navbar a {
+  padding-left: 0.9rem;
+  color: var(--white);
+  font-size: 2rem;
+  text-align: right;
+}
+
+#navbarNav a {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+#navbarNav ul {
+  padding: 0;
+  margin: 0;
+}
+
+#navbarNav li:hover a {
+  color: var(--red);
+  font-weight: bold;
+}
+
+#navbarNav {
+  text-align: right;
+}
+
+/* Nav */
+
 }
