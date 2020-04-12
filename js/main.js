@@ -1,7 +1,7 @@
 const pokedex = document.getElementById("pokedex");
 
 var firstPokemon = 1;
-var lastPokemon = 151;
+var lastPokemon = 807;
 
 const fetchPokemon = () => {
     const promises = [];
@@ -43,6 +43,13 @@ const displayPokemon = pokemon => {
 };
 
 fetchPokemon();
+
+function completeDex() {
+    firstPokemon = 1;
+    lastPokemon = 807;
+    fetchPokemon();
+}
+
 
 function kantoDex() {
     firstPokemon = 1;

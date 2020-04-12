@@ -47,6 +47,15 @@ body {
 
 }
 
+.nav-item .card, .nav-item .card-header, .nav-item .card-body{
+  background: var(--background-color);
+  color: var(--white);
+}
+
+#headingOne{
+  width: 100%;
+  text-align: center;
+}
 .poke_container {
   padding: 40px;
   margin: 0 auto;
