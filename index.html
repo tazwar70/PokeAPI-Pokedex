@@ -32,18 +32,39 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <!-- Search -->
                 <li class="nav-item">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                        id="nav_search">
+                    <div class="accordion " id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <a class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseSearch" aria-expanded="true" aria-controls="collapseSearch">
+                                        <i class="fad fa-search"></i> Search 
+                                    </a>
+                                </h2>
+                            </div>
+
+                            <div id="collapseSearch" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                                        id="nav_search">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
+                <!-- Search -->
+                <!-- Regions -->
                 <li class="nav-item">
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion " id="accordionExample">
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <a class="btn btn-link" type="button" data-toggle="collapse"
                                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Regions
+                                       <i class="fad fa-map-marked"></i> Regions
                                     </a>
                                 </h2>
                             </div>
@@ -72,6 +93,7 @@
                         </div>
                     </div>
                 </li>
+                <!-- Regions -->
                 <!-- <li class="nav-item">
                 </li>
                 <li class="nav-item">
