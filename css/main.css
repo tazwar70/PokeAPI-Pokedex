@@ -25,6 +25,10 @@
 
   --font_electric:#333;
 
+  --fs_navbar_brand: 3rem;
+  --fs_navbar_buttons:1.5rem;
+  --fs_pokemon_name: 2.5rem;
+
 }
 
 #boxLoading {
@@ -74,7 +78,7 @@ h1 {
 .pokemon-name {
   text-transform: uppercase;
   text-align: center;
-  font-size: 2.5em;
+  font-size: var(--fs_pokemon_name);
   color: var(--white);
 }
 
@@ -88,6 +92,23 @@ h1 {
   padding-inline-start: 0;
 }
 
+.dropdown-toggle{
+  border-radius: 17px;
+  background: #333333;
+  box-shadow: inset 5px 5px 5px #242424, 
+            inset -5px -5px 5px #424242;
+  color: var(--white);
+  font-size: var(--fs_navbar_buttons);
+  padding: 1rem 4rem;
+  border: none;
+  margin-left: 1rem;
+}
+.dropdown-toggle:hover{
+  border-radius: 17px;
+  background: #333333;
+  box-shadow:  5px 5px 5px #242424, 
+              -5px -5px 5px #424242;
+}
 .pkmn-card {
   list-style: none;
   padding: 40px;
@@ -289,13 +310,13 @@ h1 {
 #navbar a {
   padding-left: 1rem;
   color: var(--white);
-  font-size: 3rem;
+  font-size: var(--fs_navbar_brand);
   text-align: right;
 }
 
 #navbarNav a {
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: var(--fs_navbar_buttons);
 }
 
 #navbarNav ul {
